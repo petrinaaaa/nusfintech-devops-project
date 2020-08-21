@@ -32,7 +32,7 @@ jobs:
     - name: test
       run: npm test
     - name: Send test completed email
-      uses: wadeww/send-email-action@master
+      uses: dawidd6/action-send-mail@v2
       with:
         server_address: smtp.gmail.com
         port: 465
@@ -40,7 +40,7 @@ jobs:
         password: ${{secrets.EMAIL_PASSWORD}}
         subject: Test Node.js workflow completed
         body: Job completed ${{job.status}}
-        to: petrina1004@gmail.com
+        to: petrinay1004@gmail.com
         from: Me
       env:
         CI: true
