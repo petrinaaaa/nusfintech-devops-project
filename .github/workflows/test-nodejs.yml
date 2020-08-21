@@ -31,16 +31,13 @@ jobs:
       run: npm run build --if-present
     - name: test
       run: npm test
-    - name: Send test completed email
-      uses: dawidd6/action-send-mail@v2
+    - name: send telegram message
+      uses: actions/checkout@master
+    - name: send custom message
+      uses: appleboy/telegram-action@master
       with:
-        server_address: smtp-mail.outlook.com
-        server_port: 587
-        username: ${{secrets.EMAIL_USERNAME}}
-        password: ${{secrets.EMAIL_PASSWORD}}
-        subject: The Test Node.js workflow completed
-        body: The workflow "Test Node.js" has been completed ${{job.status}}
-        to: petrinay1004@gmail.com
-        from: Me
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: The workflow "Test Node.js" has been completed ${{job.status}}
       env:
         CI: true
