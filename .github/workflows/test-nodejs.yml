@@ -34,13 +34,13 @@ jobs:
     - name: Send test completed email
       uses: wadeww/send-email-action@master
       with:
-        server_address: smtp-mail.outlook.com
+        server_address: smtp.gmail.com
         port: 465
         username: ${{secrets.EMAIL_USERNAME}}
         password: ${{secrets.EMAIL_PASSWORD}}
         subject: Test Node.js workflow completed
         body: Job completed ${{job.status}}
-        to: petrinay1004@gmail.com
+        to: petrina1004@gmail.com
         from: Me
       env:
         CI: true
