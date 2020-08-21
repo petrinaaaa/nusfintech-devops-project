@@ -39,7 +39,7 @@ jobs:
         username: ${{secrets.EMAIL_USERNAME}}
         password: ${{secrets.EMAIL_PASSWORD}}
         subject: Test Node.js workflow completed
-        body: Job completed ${{job.status}}
+        body: Test has been completed ${{job.status}}
         to: petrinay1004@gmail.com
         from: Me
       env:
