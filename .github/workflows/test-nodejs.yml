@@ -36,8 +36,8 @@ jobs:
       with:
         server_address: smtp.gmail.com
         port: 465
-        username: ${{secrets.MAIL_USERNAME}}
-        password: ${{secrets.MAIL_PASSWORD}}
+        username: ${{secrets.EMAIL_USERNAME}}
+        password: ${{secrets.EMAIL_PASSWORD}}
         subject: Test Node.js workflow completed
         body: Job completed ${{job.status}}
         to: petrinay1004@gmail.com
