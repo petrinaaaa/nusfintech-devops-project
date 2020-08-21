@@ -38,6 +38,6 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: ${{job.status}}! The workflow "Test Node.js" has been completed.
+        message: Workflow "Test Node.js" completion status - ${{job.status}}!
       env:
         CI: true
