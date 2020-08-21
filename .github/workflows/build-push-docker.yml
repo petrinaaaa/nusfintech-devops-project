@@ -9,7 +9,8 @@ on:
 jobs:
 
   build:
-
+    
+    name: Building and pushing images into Docker
     runs-on: ubuntu-latest
 
     steps:
